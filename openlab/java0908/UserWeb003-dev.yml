@@ -1,0 +1,28 @@
+server:
+  port: 9003
+spring:
+  thymeleaf:
+    cache: false
+  application:
+    name: UserWeb003
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/,http://localhost:9999/eureka/
+USERPROVIDER:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule  #轮询
+    ConnectTimeout: 250
+    ReadTimeout: 250   #重试机制必须小于默认的1000ms 才能生效  若大于1000则已经熔断  刷新重试
+    OkToRetryOnAllOperations: true
+    # 切换实例的重试次数
+    MaxAutoRetriesNextServer: 1
+    # 对当前实例的重试次数
+    MaxAutoRetries: 1
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000   #自定义设置熔断器时间 但是要比ribbon的重试时间长 默认时间为1000ms
