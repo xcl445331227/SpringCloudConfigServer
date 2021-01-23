@@ -12,7 +12,7 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-ProviderVersion: UserProvider001
+ProviderVersion: Userprovider001
 eureka:
   client:
     service-url:
