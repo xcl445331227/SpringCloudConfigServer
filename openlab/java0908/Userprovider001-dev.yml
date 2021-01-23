@@ -3,6 +3,7 @@ server:
 spring:
   application:
     name: UserProvider
+    ProviderVersion: UserProvider001
   datasource:
     url: jdbc:mysql://localhost:3306/springcloud001?characterEncoding=UTF-8&serverTimezone=GMT%2B8
     username: root
