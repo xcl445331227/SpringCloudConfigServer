@@ -8,7 +8,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8888/eureka/,http://localhost:9999/eureka/
+      defaultZone: http://eureka1:8888/eureka/,http://eureka2:9999/eureka/
 USERPROVIDER:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule  #轮询
