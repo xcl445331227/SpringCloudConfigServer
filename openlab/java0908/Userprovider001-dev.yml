@@ -4,15 +4,14 @@ spring:
   application:
     name: UserProvider
   datasource:
-    url: jdbc:mysql://db1:3306/springcloud001?characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    url: jdbc:mysql://db1:3306/springcloud001?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
     username: root
-    password: 123456
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-ProviderVersion: Userprovider001
 eureka:
   client:
     service-url:
